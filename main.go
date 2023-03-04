@@ -76,9 +76,6 @@ func main() {
 		log.Fatal("Error loading .env file")
 	}
 
-	// os.Setenv("TOKEN","")
-	log.Println(os.Getenv("TOKEN"))
-
 	botToken := os.Getenv("TOKEN")
 	bot, err := telego.NewBot(botToken, telego.WithDefaultDebugLogger())
 	if err != nil {
@@ -118,7 +115,6 @@ func main() {
 	bh.HandleMessage(func(bot *telego.Bot, message telego.Message) {
 		// Get chat ID from the message
 		chatID := tu.ID(message.Chat.ID)
-		log.Println(message.Text)
 
 		//now make request to the open ai api
 
