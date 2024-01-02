@@ -22,7 +22,6 @@ func sendGptRequest(message string) string {
 
 	data := map[string]interface{}{
 		"model":      "gpt-3.5-turbo",
-		"max_tokens": 100,
 		"messages": []map[string]string{{
 			"role":    "user",
 			"content": message,
